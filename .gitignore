@@ -1,0 +1,6 @@
+# Remove internal notes
+__internal/
+
+
+# mac related
+.DS_Store
