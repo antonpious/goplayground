@@ -40,6 +40,7 @@ func main() {
 	// The folder name is same as the package name
 	teachers.GetTeachers()
 
+	// object orientation
 	// note the special syntax. there is a : and = to assign this variable
 	person1 := objectorientation.Person{
 		FirstName: "John",
@@ -50,6 +51,25 @@ func main() {
 
 	fmt.Println("Full Name ", person1.GetName())
 
-	// object orientation
+	person1.SetName("Smith", "Brown")
+
+	fmt.Println("Full Name ", person1.GetName())
+
+	// There is no real encapsulation
+	// one can directly update the struct if the struct is exposed as
+	// public variables
+	person1.FirstName = "Peter"
+	fmt.Println("Full Name ", person1.GetName())
+
+	// There is encapsulation
+	// if the fields are not exposed and only available through functions
+	person2 := objectorientation.InternalPerson{}
+
+	// This should print an empty name
+	fmt.Println("Full Name ", person2.GetName())
+
+	person2.SetName("Jane", "Smith")
+
+	fmt.Println("Full Name ", person2.GetName())
 
 }
