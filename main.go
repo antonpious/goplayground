@@ -40,6 +40,8 @@ func main() {
 	// The folder name is same as the package name
 	teachers.GetTeachers()
 
+	fmt.Println("Demonstrates Encapsulation")
+
 	// object orientation
 	// note the special syntax. there is a : and = to assign this variable
 	person1 := objectorientation.Person{
@@ -71,5 +73,21 @@ func main() {
 	person2.SetName("Jane", "Smith")
 
 	fmt.Println("Full Name ", person2.GetName())
+
+	fmt.Println("Demonstrates Polymorphism")
+
+	rectangle := objectorientation.Rectangle{
+		Width:  2,
+		Height: 3}
+
+	circle := objectorientation.Circle{
+		Radius: 4}
+
+	// Polymorphism
+	shapes := []objectorientation.Shape{rectangle, circle}
+	// using the interface method get the area
+	for _, shape := range shapes {
+		fmt.Println("Area =", shape.Area())
+	}
 
 }
